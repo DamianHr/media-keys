@@ -9,6 +9,10 @@ const iconPrev = new St.Icon({
   icon_name: 'media-skip-backward-symbolic',
   style_class: 'system-status-icon'
 });
+const iconPlay = new St.Icon({
+  icon_name: 'media-playback-start-symbolic',
+  style_class: 'system-status-icon'
+});
 const iconPause = new St.Icon({
   icon_name: 'media-playback-pause-symbolic',
   style_class: 'system-status-icon'
@@ -23,6 +27,7 @@ let buttonPause = new St.Button({ style_class: 'panel-button'});
 let buttonNext = new St.Button({ style_class: 'panel-button'});
 
 function _pause() {
+  buttonPause.set_child(iconPlay)
   Util.spawn(['xdotool', 'key', 'XF86AudioPlay']);
 }
 
